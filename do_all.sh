@@ -16,7 +16,7 @@ echo "*** Subsetting .vcf for each feature"
 for TYPE in *.bed
 do
     echo "--- Subsetting $TYPE.vcf"
-    awk '{total+=$3-$2} END{print "    + Covering " total " bp"}' $TYPE
+    bedtools sort -i $TYPE | bedtools merge | awk '{total+=$3-$2} END{print "    + Covering " total " bp"}'
     bedtools intersect -u -header -a $VCF -b $TYPE > $TYPE.vcf
 done
 
