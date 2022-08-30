@@ -12,8 +12,8 @@ gunzip *.gz
 2. Create a new conda environment with required software
 
 ```
-conda create --name day4-morning
-conda activate day4-morning
+conda create --name day4-lunch
+conda activate day4-lunch
 conda install bedtools matplotlib
 ```
 
